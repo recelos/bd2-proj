@@ -9,7 +9,7 @@ namespace BillSplitter.DataAccess.Repositories
         public LoginResult TryToLogin(string login, string password)
         {
 
-            string retrievedPassword;
+            string? retrievedPassword;
             try
             {
                 retrievedPassword = GetUserPassword(login);
@@ -20,8 +20,12 @@ namespace BillSplitter.DataAccess.Repositories
                 return LoginResult.ConnectionError;
             }
 
+            if(retrievedPassword is null)
+            {
+                return LoginResult.WrongCredentials;
+            }
 
-            if (retrievedPassword.Equals(password) && !string.IsNullOrWhiteSpace(retrievedPassword))
+            if (retrievedPassword.Equals(password))
             {
                 return LoginResult.Ok;
             }
