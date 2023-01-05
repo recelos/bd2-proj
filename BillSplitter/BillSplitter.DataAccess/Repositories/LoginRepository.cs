@@ -3,6 +3,7 @@ using BillSplitter.DataAccess.Enums;
 using System.Data;
 using MySql.Data.MySqlClient;
 using Dapper;
+using BillSplitter.DataAccess.Models;
 
 namespace BillSplitter.DataAccess.Repositories
 {
@@ -18,10 +19,11 @@ namespace BillSplitter.DataAccess.Repositories
             }
             catch(Exception e)
             {
+                Console.WriteLine(e);
                 return LoginResult.ConnectionError;
             }
 
-            if(retrievedPassword is null)
+            if (retrievedPassword is null)
             {
                 return LoginResult.WrongCredentials;
             }
@@ -35,19 +37,26 @@ namespace BillSplitter.DataAccess.Repositories
             return LoginResult.WrongCredentials;
         }
 
-        private static string GetUserPassword(string login)
+        public User? GetUserByUserName(string login)
         {
             using var conn = ConnectionFactory.Create();
 
-            var output = conn
-                .Query<string>(StoredProcedures.GetUsersPassword, new 
-                {
-                    user_name = login 
-                },
+            return conn.Query<User>(
+                StoredProcedures.GetUserByUsername,
+                new { user_name = login },
                 commandType: CommandType.StoredProcedure)
                 .FirstOrDefault();
+        }
 
-            return output;
+        private static string? GetUserPassword(string login)
+        {
+            using var conn = ConnectionFactory.Create();
+
+            return conn.Query<string>(
+                StoredProcedures.GetUsersPassword,
+                new { user_name = login },
+                commandType: CommandType.StoredProcedure)
+                .FirstOrDefault();
         }
     }
 }

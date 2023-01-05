@@ -1,5 +1,6 @@
 using BillSplitter.DataAccess.Enums;
 using BillSplitter.DataAccess.Repositories;
+using BillSplitter.UI.Forms;
 
 namespace BillSplitter
 {
@@ -14,13 +15,19 @@ namespace BillSplitter
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            var result = _repository.TryToLogin(loginTextBox.Text, passwordTextBox.Text);
+            var username = loginTextBox.Text;
+            var password = passwordTextBox.Text;
+
+            var result = _repository.TryToLogin(username, password);
 
 
             switch (result)
             {
                 case LoginResult.Ok:
-                    MessageBox.Show("Ok");
+                    this.Hide();
+                    var user = _repository.GetUserByUserName(username);
+                    new FormUserGroups(new UserGroupsRepository(), user).ShowDialog();
+                    this.Close();
                     break;
                 case LoginResult.ConnectionError:
                     MessageBox.Show("Connection error");
