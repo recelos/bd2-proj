@@ -1,6 +1,8 @@
 ﻿using BillSplitter.DataAccess.Consts;
 using BillSplitter.DataAccess.Enums;
-using MySqlConnector;
+using System.Data;
+using MySql.Data.MySqlClient;
+using Dapper;
 
 namespace BillSplitter.DataAccess.Repositories
 {
@@ -16,7 +18,6 @@ namespace BillSplitter.DataAccess.Repositories
             }
             catch(Exception e)
             {
-                Console.WriteLine(e);
                 return LoginResult.ConnectionError;
             }
 
@@ -37,15 +38,14 @@ namespace BillSplitter.DataAccess.Repositories
         private static string GetUserPassword(string login)
         {
             using var conn = ConnectionFactory.Create();
-            using var cmd = new MySqlCommand(StoredProcedures.GetUsersPassword, conn);
 
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@user_name", login);
-
-            conn.Open();
-
-            var output = cmd.ExecuteScalar() as string;
-            conn.Close();
+            var output = conn
+                .Query<string>(StoredProcedures.GetUsersPassword, new 
+                {
+                    user_name = login 
+                },
+                commandType: CommandType.StoredProcedure)
+                .FirstOrDefault();
 
             return output;
         }
