@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BillSplitter.DataAccess.Enums
 {
-    public enum LoginResult
-    {
-        Ok,
-        WrongCredentials,
-        ConnectionError
-    }
+  public enum LoginResult
+  {
+    Ok,
+    WrongCredentials,
+    ConnectionError
+  }
 }

@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace BillSplitter.UI.Forms
 {
-    public partial class FormAddNewGroup : Form
+  public partial class FormAddNewGroup : Form
+  {
+    public FormAddNewGroup()
     {
-        public FormAddNewGroup()
-        {
-            InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+      InitializeComponent();
     }
+
+    private void textBox1_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void label1_Click(object sender, EventArgs e)
+    {
+
+    }
+  }
 }

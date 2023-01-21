@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BillSplitter.DataAccess.Models
 {
-    public class Balance
-    {
-    }
+  public class Balance
+  {
+  }
 }

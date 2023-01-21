@@ -9,7 +9,7 @@ namespace BillSplitter.DataAccess.Repositories.Interfaces
 {
     public interface IGroupRepository
     {
-        List<Balance> GetUserBalances(int userId, int groupId);
+        List<Balance> GetUserBalances(int userId, int groupId, List<User> otherUsers);
 
         List<Receipt> GetReceipts(int groupId);
 

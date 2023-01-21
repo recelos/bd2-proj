@@ -7,55 +7,55 @@ using BillSplitter.DataAccess.Models;
 
 namespace BillSplitter.DataAccess.Repositories
 {
-    public class LoginRepository
+  public class LoginRepository
+  {
+    public LoginResult TryToLogin(string login, string password)
     {
-        public LoginResult TryToLogin(string login, string password)
-        {
 
-            string? retrievedPassword;
-            try
-            {
-                retrievedPassword = GetUserPassword(login);
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e);
-                return LoginResult.ConnectionError;
-            }
+      string? retrievedPassword;
+      try
+      {
+        retrievedPassword = GetUserPassword(login);
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine(e);
+        return LoginResult.ConnectionError;
+      }
 
-            if (retrievedPassword is null)
-            {
-                return LoginResult.WrongCredentials;
-            }
+      if (retrievedPassword is null)
+      {
+        return LoginResult.WrongCredentials;
+      }
 
-            if (retrievedPassword.Equals(password))
-            {
-                return LoginResult.Ok;
-            }
+      if (retrievedPassword.Equals(password))
+      {
+        return LoginResult.Ok;
+      }
 
-            return LoginResult.WrongCredentials;
-        }
-
-        public User? GetUserByUserName(string login)
-        {
-            using var conn = ConnectionFactory.Create();
-
-            return conn.Query<User>(
-                StoredProcedures.GetUserByUsername,
-                new { user_name = login },
-                commandType: CommandType.StoredProcedure)
-                .FirstOrDefault();
-        }
-
-        private static string? GetUserPassword(string login)
-        {
-            using var conn = ConnectionFactory.Create();
-
-            return conn.Query<string>(
-                StoredProcedures.GetUsersPassword,
-                new { user_name = login },
-                commandType: CommandType.StoredProcedure)
-                .FirstOrDefault();
-        }
+      return LoginResult.WrongCredentials;
     }
+
+    public User? GetUserByUserName(string login)
+    {
+      using var conn = ConnectionFactory.Create();
+
+      return conn.Query<User>(
+          StoredProcedures.GetUserByUsername,
+          new { user_name = login },
+          commandType: CommandType.StoredProcedure)
+          .FirstOrDefault();
+    }
+
+    private static string? GetUserPassword(string login)
+    {
+      using var conn = ConnectionFactory.Create();
+
+      return conn.Query<string>(
+          StoredProcedures.GetUsersPassword,
+          new { user_name = login },
+          commandType: CommandType.StoredProcedure)
+          .FirstOrDefault();
+    }
+  }
 }
