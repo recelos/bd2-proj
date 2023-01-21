@@ -24,15 +24,15 @@ public partial class FormGroup : Form
     _group = group;
     _repository = repository;
 
-    groupLabel.Text = _group.name;
+    groupLabel.Text = _group.Name;
 
 
-    _otherUsers = _repository.GetOtherUsers(_user.UserId, _group.group_id);
-    _receipts = _repository.GetReceipts(_group.group_id);
+    _otherUsers = _repository.GetOtherUsers(_user.UserId, _group.GroupId);
+    _receipts = _repository.GetReceipts(_group.GroupId);
 
 
     billsGridView.DataSource = _receipts;
-    balanceGridView.DataSource = _repository.GetUserBalances(_user.UserId, _group.group_id, _otherUsers);
+    balanceGridView.DataSource = _repository.GetUserBalances(_user.UserId, _group.GroupId, _otherUsers);
 
     billsGridView.Columns["ReceiptId"].Visible = false;
   }

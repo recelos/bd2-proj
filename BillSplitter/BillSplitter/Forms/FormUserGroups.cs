@@ -25,7 +25,7 @@ public partial class FormUserGroups : Form
   private void groupsDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
   {
     var groupId = (int)groupsDataGrid.Rows[e.RowIndex].Cells[0].Value;
-    var group = _groups.FirstOrDefault(x => x.group_id == groupId);
+    var group = _groups.FirstOrDefault(x => x.GroupId == groupId);
 
     new FormGroup(_user, group, new GroupRepository())
       .ShowDialog();
@@ -44,6 +44,6 @@ public partial class FormUserGroups : Form
 
     groupsDataGrid.DataSource = _groups;
 
-    groupsDataGrid.Columns["group_id"].Visible = false;
+    groupsDataGrid.Columns["GroupId"].Visible = false;
   }
 }
