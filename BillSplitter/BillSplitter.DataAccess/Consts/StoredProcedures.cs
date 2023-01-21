@@ -7,5 +7,6 @@
     public const string GetUsersGroups = "get_user_groups";
     public const string GetReceiptsInGroup = "get_receipts_in_group";
     public const string GetUsersInGroup = "get_users_in_group";
+    public const string GetUserDebt = "get_user_debt";
   }
 }

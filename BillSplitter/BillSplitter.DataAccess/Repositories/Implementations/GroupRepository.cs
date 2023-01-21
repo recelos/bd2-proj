@@ -7,14 +7,36 @@ namespace BillSplitter.DataAccess.Repositories.Implementations
 {
   public class GroupRepository : IGroupRepository
   {
-    public List<Balance> GetUserBalances(int groupId, int userId, List<User> otherUsers)
+    public List<Balance> GetUserBalances(int groupId, int userId, IReadOnlyCollection<User> otherUsers)
     {
       using var connection = ConnectionFactory.Create();
 
+      var output = new List<Balance>();
+
+      foreach(var otherUser in otherUsers)
+      {
+        var balance = new Balance();
+
+        var otherUsersDebt = connection
+          .Query<decimal>(StoredProcedures.GetUserDebt,
+            new { group_id = groupId, user_id = userId, owning_user_id = otherUser.UserId },
+            commandType: System.Data.CommandType.StoredProcedure)
+          .FirstOrDefault();
 
 
+        var thisUsersDebt = connection
+          .Query<decimal>(StoredProcedures.GetUserDebt,
+            new { group_id = groupId, user_id = otherUser.UserId, owning_user_id = userId },
+            commandType: System.Data.CommandType.StoredProcedure)
+          .FirstOrDefault();
 
-      return new List<Balance>();
+        balance.Name = otherUser.Username;
+        balance.Amount = otherUsersDebt - thisUsersDebt;
+
+        output.Add(balance);
+      }
+
+      return output;
     }
 
     public List<Receipt> GetReceipts(int groupId)

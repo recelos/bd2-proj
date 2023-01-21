@@ -38,7 +38,7 @@ namespace BillSplitter.UI.Forms
       _otherUsers = _repository.GetOtherUsers(_user.UserId, _group.group_id);
 
       billsGridView.DataSource = _repository.GetReceipts(_group.group_id);
-      // balanceGridView.DataSource = _repository.GetUserBalances(int userId, int groupId);
+      balanceGridView.DataSource = _repository.GetUserBalances(_user.UserId, _group.group_id, _otherUsers);
     }
   }
 }
