@@ -9,5 +9,6 @@
     public const string GetUsersInGroup = "get_users_in_group";
     public const string GetUserDebt = "get_user_debt";
     public const string GetUsersInReceipt = "get_users_in_receipt";
+    public const string AddNewGroup = "add_new_group";
   }
 }

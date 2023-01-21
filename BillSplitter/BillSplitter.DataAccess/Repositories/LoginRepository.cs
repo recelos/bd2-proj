@@ -38,9 +38,9 @@ namespace BillSplitter.DataAccess.Repositories
 
     public User? GetUserByUserName(string login)
     {
-      using var conn = ConnectionFactory.Create();
+      using var connection = ConnectionFactory.Create();
 
-      return conn.Query<User>(
+      return connection.Query<User>(
           StoredProcedures.GetUserByUsername,
           new { user_name = login },
           commandType: CommandType.StoredProcedure)
@@ -49,9 +49,9 @@ namespace BillSplitter.DataAccess.Repositories
 
     private static string? GetUserPassword(string login)
     {
-      using var conn = ConnectionFactory.Create();
+      using var connection = ConnectionFactory.Create();
 
-      return conn.Query<string>(
+      return connection.Query<string>(
           StoredProcedures.GetUsersPassword,
           new { user_name = login },
           commandType: CommandType.StoredProcedure)

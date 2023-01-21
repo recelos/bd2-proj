@@ -19,24 +19,32 @@ namespace BillSplitter.UI.Forms
 
       usernameLabel.Text = $"{user.FirstName} {user.LastName}";
 
-      _groups = _repository.GetGroups(_user.UserId);
-
-      groupsDataGrid.DataSource = _groups;
-
-
-      groupsDataGrid.Columns["group_id"].Visible = false;
+      ReloadResources();
     }
 
     private void groupsDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
     {
       var groupId = (int)groupsDataGrid.Rows[e.RowIndex].Cells[0].Value;
-
-
-      var group = _groups.Where(x => x.group_id == groupId).FirstOrDefault();
-
+      var group = _groups.FirstOrDefault(x => x.group_id == groupId);
 
       new FormGroup(_user, group, new GroupRepository())
           .ShowDialog();
+    }
+
+    private void addNewGroupButton_Click(object sender, EventArgs e)
+    {
+      new FormAddNewGroup(_user, new AddNewGroupRepository()).ShowDialog();
+      ReloadResources();
+    }
+
+
+    private void ReloadResources()
+    {
+      _groups = _repository.GetGroups(_user.UserId);
+
+      groupsDataGrid.DataSource = _groups;
+
+      groupsDataGrid.Columns["group_id"].Visible = false;
     }
   }
 }

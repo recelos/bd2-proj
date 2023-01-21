@@ -58,12 +58,13 @@
       // 
       // addNewGroupButton
       // 
-      this.addNewGroupButton.Location = new System.Drawing.Point(580, 114);
+      this.addNewGroupButton.Location = new System.Drawing.Point(578, 240);
       this.addNewGroupButton.Name = "addNewGroupButton";
       this.addNewGroupButton.Size = new System.Drawing.Size(185, 34);
       this.addNewGroupButton.TabIndex = 2;
       this.addNewGroupButton.Text = "Create new group";
       this.addNewGroupButton.UseVisualStyleBackColor = true;
+      this.addNewGroupButton.Click += new System.EventHandler(this.addNewGroupButton_Click);
       // 
       // FormUserGroups
       // 
