@@ -1,14 +1,13 @@
 using BillSplitter.DataAccess.Repositories;
 
-namespace BillSplitter
+namespace BillSplitter;
+
+internal static class Program
 {
-  internal static class Program
+  [STAThread]
+  static void Main()
   {
-    [STAThread]
-    static void Main()
-    {
-      ApplicationConfiguration.Initialize();
-      Application.Run(new FormLogin(new LoginRepository()));
-    }
+    ApplicationConfiguration.Initialize();
+    Application.Run(new FormLogin(new LoginRepository()));
   }
 }

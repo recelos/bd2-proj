@@ -1,9 +1,8 @@
-﻿namespace BillSplitter.DataAccess.Models
-{
-  public class UserReceiptDetail
-  {
-    public string User { get; set; }
+﻿namespace BillSplitter.DataAccess.Models;
 
-    public decimal Amount { get; set; }
-  }
+public class UserReceiptDetail
+{
+  public string User { get; set; }
+
+  public decimal Amount { get; set; }
 }

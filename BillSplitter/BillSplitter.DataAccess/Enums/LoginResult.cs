@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace BillSplitter.DataAccess.Enums;
 
-namespace BillSplitter.DataAccess.Enums
+public enum LoginResult
 {
-  public enum LoginResult
-  {
-    Ok,
-    WrongCredentials,
-    ConnectionError
-  }
+  Ok,
+  WrongCredentials,
+  ConnectionError
 }
