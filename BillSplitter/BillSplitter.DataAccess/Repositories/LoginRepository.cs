@@ -33,7 +33,6 @@ namespace BillSplitter.DataAccess.Repositories
                 return LoginResult.Ok;
             }
 
-
             return LoginResult.WrongCredentials;
         }
 

@@ -82,7 +82,7 @@
             // newAccLinkLabel
             // 
             this.newAccLinkLabel.AutoSize = true;
-            this.newAccLinkLabel.Location = new System.Drawing.Point(171, 207);
+            this.newAccLinkLabel.Location = new System.Drawing.Point(167, 207);
             this.newAccLinkLabel.Name = "newAccLinkLabel";
             this.newAccLinkLabel.Size = new System.Drawing.Size(163, 20);
             this.newAccLinkLabel.TabIndex = 5;
