@@ -46,6 +46,7 @@
       this.billsGridView.RowTemplate.Height = 29;
       this.billsGridView.Size = new System.Drawing.Size(555, 407);
       this.billsGridView.TabIndex = 0;
+      this.billsGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.billsGridView_CellContentDoubleClick);
       // 
       // balanceGridView
       // 
@@ -91,7 +92,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1101, 594);
+      this.ClientSize = new System.Drawing.Size(1101, 560);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.groupLabel);

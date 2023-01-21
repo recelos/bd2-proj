@@ -22,6 +22,9 @@ namespace BillSplitter.UI.Forms
       _groups = _repository.GetGroups(_user.UserId);
 
       groupsDataGrid.DataSource = _groups;
+
+
+      groupsDataGrid.Columns["group_id"].Visible = false;
     }
 
     private void groupsDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
