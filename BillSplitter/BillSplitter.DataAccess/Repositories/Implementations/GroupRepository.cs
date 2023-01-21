@@ -7,7 +7,7 @@ namespace BillSplitter.DataAccess.Repositories.Implementations
 {
   public class GroupRepository : IGroupRepository
   {
-    public List<Balance> GetUserBalances(int groupId, int userId, IReadOnlyCollection<User> otherUsers)
+    public List<Balance> GetUserBalances(int userId, int groupId, IReadOnlyCollection<User> otherUsers)
     {
       using var connection = ConnectionFactory.Create();
 
