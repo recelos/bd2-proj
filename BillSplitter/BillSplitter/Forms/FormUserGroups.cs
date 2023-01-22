@@ -27,13 +27,25 @@ public partial class FormUserGroups : Form
     var groupId = (int)groupsDataGrid.Rows[e.RowIndex].Cells[0].Value;
     var group = _groups.FirstOrDefault(x => x.GroupId == groupId);
 
-    new FormGroup(_user, group, new GroupRepository())
-      .ShowDialog();
+
+    var isOwner = _repository.CheckIfOwner(_user.UserId, group.GroupId);
+
+    if (isOwner == 1)
+    {
+      new FormGroupOwner(_user, group, new GroupRepository())
+        .ShowDialog();
+    }
+    else
+    {
+      new FormGroup(_user, group, new GroupRepository())
+        .ShowDialog();
+    }
   }
 
   private void addNewGroupButton_Click(object sender, EventArgs e)
   {
-    new FormAddNewGroup(_user, new AddNewGroupRepository()).ShowDialog();
+    new FormAddNewGroup(_user, new AddNewGroupRepository())
+      .ShowDialog();
     ReloadResources();
   }
 

@@ -12,4 +12,6 @@ internal static class StoredProcedures
   public const string AddNewGroup = "add_new_group";
   public const string AddNewReceipt = "add_new_receipt";
   public const string AddUserToReceipt = "add_user_to_receipt";
+  public const string AddUserToGroup = "add_user_to_group";
+  public const string CheckIfOwner = "check_if_owner";
 }

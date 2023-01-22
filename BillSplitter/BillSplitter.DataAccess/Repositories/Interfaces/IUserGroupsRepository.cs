@@ -4,5 +4,6 @@ namespace BillSplitter.DataAccess.Repositories.Interfaces;
 
 public interface IUserGroupsRepository
 {
-  public List<Group> GetGroups(int userId);
+  List<Group> GetGroups(int userId);
+  int CheckIfOwner(int userUserId, int groupGroupId);
 }
