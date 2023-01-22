@@ -25,7 +25,7 @@ public partial class FormGroup : Form
     _repository = repository;
 
     groupLabel.Text = _group.Name;
-
+    userLabel.Text = $"{_user.FirstName} {_user.LastName}" ;
 
     ReloadResources();
   }
