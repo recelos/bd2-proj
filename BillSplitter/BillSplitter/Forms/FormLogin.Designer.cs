@@ -88,6 +88,7 @@
       this.newAccLinkLabel.TabIndex = 5;
       this.newAccLinkLabel.TabStop = true;
       this.newAccLinkLabel.Text = "Don\'t have an account?";
+      this.newAccLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newAccLinkLabel_LinkClicked);
       // 
       // FormLogin
       // 

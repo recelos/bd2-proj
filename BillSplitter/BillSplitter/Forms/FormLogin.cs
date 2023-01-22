@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using BillSplitter.DataAccess.Enums;
 using BillSplitter.DataAccess.Repositories;
 using BillSplitter.DataAccess.Repositories.Implementations;
@@ -41,5 +42,15 @@ public partial class FormLogin : Form
         break;
 
     }
+  }
+
+  private void newAccLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    var psInfo = new ProcessStartInfo
+    {
+      FileName = "http://www.craksys.pl",
+      UseShellExecute = true
+    };
+    Process.Start(psInfo);
   }
 }
