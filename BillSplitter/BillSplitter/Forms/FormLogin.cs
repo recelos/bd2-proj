@@ -1,13 +1,15 @@
 using BillSplitter.DataAccess.Enums;
 using BillSplitter.DataAccess.Repositories;
+using BillSplitter.DataAccess.Repositories.Implementations;
+using BillSplitter.DataAccess.Repositories.Interfaces;
 using BillSplitter.UI.Forms;
 
 namespace BillSplitter;
 
 public partial class FormLogin : Form
 {
-  private readonly LoginRepository _repository;
-  public FormLogin(LoginRepository repository)
+  private readonly ILoginRepository _repository;
+  public FormLogin(ILoginRepository repository)
   {
     InitializeComponent();
     _repository = repository;

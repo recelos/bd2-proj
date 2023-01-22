@@ -38,7 +38,7 @@ public partial class FormAddReceipt : Form
 
     InitializeComponent();
     usersDataGridView.DataSource = _userAmounts;
-    // usersDataGridView.Columns["UserId"].Visible = false;
+    usersDataGridView.Columns["UserId"].Visible = false;
   }
 
   private void acceptButton_Click(object sender, EventArgs e)

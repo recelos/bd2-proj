@@ -1,4 +1,4 @@
-using BillSplitter.DataAccess.Repositories;
+using BillSplitter.DataAccess.Repositories.Implementations;
 
 namespace BillSplitter;
 
