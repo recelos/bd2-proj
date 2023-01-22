@@ -4,5 +4,5 @@ namespace BillSplitter.DataAccess.Repositories.Interfaces;
 
 public interface IReceiptDetailsRepository
 {
-  public List<UserReceiptDetail> GetUsersInReceipt(Receipt receipt);
+  public List<UserAmount> GetUsersInReceipt(Receipt receipt);
 }

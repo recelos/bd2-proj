@@ -33,6 +33,7 @@
       this.groupLabel = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
+      this.addReceiptButton = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.billsGridView)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.balanceGridView)).BeginInit();
       this.SuspendLayout();
@@ -51,7 +52,7 @@
       // balanceGridView
       // 
       this.balanceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.balanceGridView.Location = new System.Drawing.Point(759, 118);
+      this.balanceGridView.Location = new System.Drawing.Point(875, 118);
       this.balanceGridView.Name = "balanceGridView";
       this.balanceGridView.RowHeadersWidth = 51;
       this.balanceGridView.RowTemplate.Height = 29;
@@ -82,17 +83,28 @@
       // 
       this.label2.AutoSize = true;
       this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-      this.label2.Location = new System.Drawing.Point(759, 84);
+      this.label2.Location = new System.Drawing.Point(875, 84);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(153, 28);
       this.label2.TabIndex = 4;
       this.label2.Text = "Your balances: ";
       // 
+      // addReceiptButton
+      // 
+      this.addReceiptButton.Location = new System.Drawing.Point(679, 147);
+      this.addReceiptButton.Name = "addReceiptButton";
+      this.addReceiptButton.Size = new System.Drawing.Size(144, 33);
+      this.addReceiptButton.TabIndex = 5;
+      this.addReceiptButton.Text = "Add receipt";
+      this.addReceiptButton.UseVisualStyleBackColor = true;
+      this.addReceiptButton.Click += new System.EventHandler(this.addReceiptButton_Click);
+      // 
       // FormGroup
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1101, 560);
+      this.ClientSize = new System.Drawing.Size(1228, 560);
+      this.Controls.Add(this.addReceiptButton);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.groupLabel);
@@ -114,5 +126,6 @@
     private Label groupLabel;
     private Label label1;
     private Label label2;
+    private Button addReceiptButton;
   }
 }

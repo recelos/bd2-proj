@@ -27,14 +27,7 @@ public partial class FormGroup : Form
     groupLabel.Text = _group.Name;
 
 
-    _otherUsers = _repository.GetOtherUsers(_user.UserId, _group.GroupId);
-    _receipts = _repository.GetReceipts(_group.GroupId);
-
-
-    billsGridView.DataSource = _receipts;
-    balanceGridView.DataSource = _repository.GetUserBalances(_user.UserId, _group.GroupId, _otherUsers);
-
-    billsGridView.Columns["ReceiptId"].Visible = false;
+    ReloadResources();
   }
 
   private void billsGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -44,5 +37,26 @@ public partial class FormGroup : Form
     var receipt = _receipts.First(x => x.ReceiptId == id);
 
     new FormReceiptDetails(receipt, new ReceiptDetailsRepository()).Show();
+  }
+
+  private void addReceiptButton_Click(object sender, EventArgs e)
+  {
+    new FormAddReceipt(_user, _group, _otherUsers, new AddReceiptRepository()).ShowDialog();
+    ReloadResources();
+  }
+
+  private void ReloadResources()
+  {
+    groupLabel.Text = _group.Name;
+
+
+    _otherUsers = _repository.GetOtherUsers(_user.UserId, _group.GroupId);
+    _receipts = _repository.GetReceipts(_group.GroupId);
+
+
+    billsGridView.DataSource = _receipts;
+    balanceGridView.DataSource = _repository.GetUserBalances(_user.UserId, _group.GroupId, _otherUsers);
+
+    billsGridView.Columns["ReceiptId"].Visible = false;
   }
 }

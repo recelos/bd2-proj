@@ -7,11 +7,11 @@ namespace BillSplitter.DataAccess.Repositories.Implementations;
 
 public class ReceiptDetailsRepository : IReceiptDetailsRepository
 {
-  public List<UserReceiptDetail> GetUsersInReceipt(Receipt receipt)
+  public List<UserAmount> GetUsersInReceipt(Receipt receipt)
   {
     using var connection = ConnectionFactory.Create();
 
-    return connection.Query<UserReceiptDetail>(
+    return connection.Query<UserAmount>(
         StoredProcedures.GetUsersInReceipt,
         new { receipt_id = receipt.ReceiptId },
         commandType: System.Data.CommandType.StoredProcedure)

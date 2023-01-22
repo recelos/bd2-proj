@@ -10,4 +10,6 @@ internal static class StoredProcedures
   public const string GetUserDebt = "get_user_debt";
   public const string GetUsersInReceipt = "get_users_in_receipt";
   public const string AddNewGroup = "add_new_group";
+  public const string AddNewReceipt = "add_new_receipt";
+  public const string AddUserToReceipt = "add_user_to_receipt";
 }
