@@ -35,6 +35,20 @@
       this.acceptButton = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
+      // label1
+      // 
+      this.label1.Location = new System.Drawing.Point(0, 0);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(100, 23);
+      this.label1.TabIndex = 0;
+      // 
+      // textBox1
+      // 
+      this.textBox1.Location = new System.Drawing.Point(0, 0);
+      this.textBox1.Name = "textBox1";
+      this.textBox1.Size = new System.Drawing.Size(100, 27);
+      this.textBox1.TabIndex = 0;
+      // 
       // label2
       // 
       this.label2.AutoSize = true;
@@ -67,6 +81,7 @@
       this.Controls.Add(this.acceptButton);
       this.Controls.Add(this.nameTextBox);
       this.Controls.Add(this.label2);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Name = "FormAddNewGroup";
       this.Text = "Bill Splitter";
       this.ResumeLayout(false);
