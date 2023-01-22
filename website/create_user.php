@@ -25,8 +25,7 @@ if($response["success"] === true)
   $last_name = $_POST["last_name"];
   
   //insert the data into the users table
-  $sql = "INSERT INTO users (user_name, password, first_name, last_name, creation_date)
-  VALUES ('$username', '$password', '$first_name', '$last_name', now())";
+  $sql = "CALL `bazy_projekt`.`create_new_user`('$username', '$password', '$first_name', '$last_name', 1, 1)";
   
   if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
