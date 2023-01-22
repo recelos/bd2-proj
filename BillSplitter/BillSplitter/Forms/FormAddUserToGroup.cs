@@ -39,6 +39,7 @@ public partial class FormAddUserToGroup : Form
     if (!success)
     {
       MessageBox.Show("Cannot add user");
+      return;
     }
 
     Close();

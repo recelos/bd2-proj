@@ -92,8 +92,9 @@
       this.Controls.Add(this.nameLabel);
       this.Controls.Add(this.payerLabel);
       this.Controls.Add(this.usersDataGridView);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Name = "FormReceiptDetails";
-      this.Text = "FormReceiptDetails";
+      this.Text = "Bill Splitter";
       ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();

@@ -41,14 +41,14 @@ public partial class FormGroupOwner : Form
 
   private void addReceiptButton_Click(object sender, EventArgs e)
   {
-    new FormAddReceipt(_user, _group, _otherUsers, new AddReceiptRepository()).ShowDialog();
+    new FormAddReceipt(_user, _group, _otherUsers, new AddReceiptRepository())
+      .ShowDialog();
     ReloadResources();
   }
   private void addUserButton_Click(object sender, EventArgs e)
   {
     new FormAddUserToGroup(_group, new AddUserToGroupRepository())
       .ShowDialog();
-
     ReloadResources();
   }
 

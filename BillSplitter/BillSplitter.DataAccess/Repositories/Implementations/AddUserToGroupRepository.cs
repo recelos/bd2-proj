@@ -20,7 +20,8 @@ public class AddUserToGroupRepository : IAddUserToGroupRepository
         .UserId;
 
       rowsAffected = connection.Execute(StoredProcedures.AddUserToGroup,
-        new { group_id = groupId, user_id = userId });
+        new { group_id = groupId, user_id = userId },
+        commandType: System.Data.CommandType.StoredProcedure);
     }
     catch (Exception)
     {
