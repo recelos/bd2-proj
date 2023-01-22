@@ -37,9 +37,10 @@
       // usernameLabel
       // 
       this.usernameLabel.AutoSize = true;
-      this.usernameLabel.Location = new System.Drawing.Point(36, 46);
+      this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+      this.usernameLabel.Location = new System.Drawing.Point(36, 40);
       this.usernameLabel.Name = "usernameLabel";
-      this.usernameLabel.Size = new System.Drawing.Size(77, 20);
+      this.usernameLabel.Size = new System.Drawing.Size(110, 28);
       this.usernameLabel.TabIndex = 0;
       this.usernameLabel.Text = "user name";
       // 
@@ -74,6 +75,7 @@
       this.Controls.Add(this.addNewGroupButton);
       this.Controls.Add(this.groupsDataGrid);
       this.Controls.Add(this.usernameLabel);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Name = "FormUserGroups";
       this.Text = "Bill Splitter";
       ((System.ComponentModel.ISupportInitialize)(this.groupsDataGrid)).EndInit();
