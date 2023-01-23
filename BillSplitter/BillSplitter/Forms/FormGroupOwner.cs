@@ -12,12 +12,12 @@ public partial class FormGroupOwner : Form
   private List<User> _otherUsers;
   private List<Receipt> _receipts;
 
-  private readonly IGroupRepository _repository;
+  private readonly IGroupOwnerRepository _repository;
 
   public FormGroupOwner(
     User user,
     Group group,
-    IGroupRepository repository)
+    IGroupOwnerRepository repository)
   {
     InitializeComponent();
     _user = user;
@@ -67,5 +67,21 @@ public partial class FormGroupOwner : Form
     billsGridView.Columns["ReceiptId"].Visible = false;
   }
 
+  private void deleteButton_Click(object sender, EventArgs e)
+  {
+    var confirmed = MessageBox.Show("Do you really want to delete this receipt?", "Delete receipt" , MessageBoxButtons.YesNo);
 
+    if (confirmed == DialogResult.No)
+    {
+      return;
+    }
+
+    var receiptId = (int)billsGridView.SelectedRows[0].Cells[0].Value;
+
+    var success = _repository.DeleteReceipt(receiptId);
+
+    MessageBox.Show(success ? "Receipt delete successfully" : "Can't delete receipt");
+
+    ReloadResources();
+  }
 }

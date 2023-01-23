@@ -81,7 +81,7 @@
       this.Controls.Add(this.recipeNameTextBox);
       this.Controls.Add(this.label1);
       this.Name = "FormAddReceipt";
-      this.Text = "FormAddReceipt";
+      this.Text = "Bill Splitter";
       ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();

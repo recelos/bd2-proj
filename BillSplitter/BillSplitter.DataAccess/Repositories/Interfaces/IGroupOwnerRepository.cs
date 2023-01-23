@@ -10,4 +10,5 @@ public interface IGroupOwnerRepository
 
   List<User> GetOtherUsers(int userId, int groupId);
 
+  bool DeleteReceipt(int receiptId);
 }

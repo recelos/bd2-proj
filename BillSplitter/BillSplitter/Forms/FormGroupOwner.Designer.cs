@@ -37,6 +37,7 @@
       this.userLabel = new System.Windows.Forms.Label();
       this.addUserButton = new System.Windows.Forms.Button();
       this.label3 = new System.Windows.Forms.Label();
+      this.deleteButton = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.billsGridView)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.balanceGridView)).BeginInit();
       this.SuspendLayout();
@@ -136,11 +137,22 @@
       this.label3.TabIndex = 8;
       this.label3.Text = "Owner";
       // 
+      // deleteButton
+      // 
+      this.deleteButton.Location = new System.Drawing.Point(679, 201);
+      this.deleteButton.Name = "deleteButton";
+      this.deleteButton.Size = new System.Drawing.Size(144, 33);
+      this.deleteButton.TabIndex = 9;
+      this.deleteButton.Text = "Delete receipt";
+      this.deleteButton.UseVisualStyleBackColor = true;
+      this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+      // 
       // FormGroupOwner
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1228, 560);
+      this.Controls.Add(this.deleteButton);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.addUserButton);
       this.Controls.Add(this.userLabel);
@@ -172,5 +184,6 @@
     private Label userLabel;
     private Button addUserButton;
     private Label label3;
+    private Button deleteButton;
   }
 }

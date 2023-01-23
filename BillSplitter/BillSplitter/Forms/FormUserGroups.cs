@@ -32,7 +32,7 @@ public partial class FormUserGroups : Form
 
     if (isOwner == 1)
     {
-      new FormGroupOwner(_user, group, new GroupRepository())
+      new FormGroupOwner(_user, group, new GroupOwnerRepository())
         .ShowDialog();
     }
     else

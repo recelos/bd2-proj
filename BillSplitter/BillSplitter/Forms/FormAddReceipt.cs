@@ -1,4 +1,5 @@
-﻿using BillSplitter.DataAccess.Models;
+﻿using System.Globalization;
+using BillSplitter.DataAccess.Models;
 using BillSplitter.DataAccess.Repositories.Interfaces;
 
 namespace BillSplitter.UI.Forms;
@@ -42,7 +43,7 @@ public partial class FormAddReceipt : Form
         usersDataGridView
           .Rows
           .Cast<DataGridViewRow>()
-        .Select(row => ((int)row.Cells["UserId"].Value, (decimal)row.Cells["Amount"].Value)));
+        .Select(row => ((int)row.Cells["UserId"].Value, Convert.ToDecimal(row.Cells["Amount"].Value, CultureInfo.InvariantCulture))));
     }
     catch (Exception)
     {
