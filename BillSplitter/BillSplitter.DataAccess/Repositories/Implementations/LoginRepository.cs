@@ -58,12 +58,11 @@ public class LoginRepository : ILoginRepository
       .FirstOrDefault();
   }
   
-  public string HashPassword(string password)
+  private string HashPassword(string password)
   {
-    using (SHA256 sha256 = SHA256.Create())
-    {
-      byte[] bytes = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-      return BitConverter.ToString(bytes).Replace("-", "").ToLower();
-    }
+    using var sha256 = SHA256.Create();
+    
+    var bytes = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+    return BitConverter.ToString(bytes).Replace("-", "").ToLower();
   }
 }
