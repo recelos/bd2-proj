@@ -23,9 +23,9 @@ if($response["success"] === true)
   $password = $_POST["password"];
   $first_name = $_POST["first_name"];
   $last_name = $_POST["last_name"];
-  
+  $hashed_password = hash('sha256', $password);
   //insert the data into the users table
-  $sql = "CALL `bazy_projekt`.`create_new_user`('$username', '$password', '$first_name', '$last_name', 1, 1)";
+  $sql = "CALL `bazy_projekt`.`create_new_user`('$username', '$hashed_password', '$first_name', '$last_name', 1, 1)";
   
   if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
