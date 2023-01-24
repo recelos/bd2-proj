@@ -84,7 +84,7 @@ public partial class FormGroupOwner : Form
 
     var success = _repository.DeleteReceipt(receiptId);
 
-    MessageBox.Show(success ? "Receipt delete successfully" : "Can't delete receipt");
+    MessageBox.Show(success ? "Receipt deleted successfully" : "Can't delete receipt");
 
     ReloadResources();
   }

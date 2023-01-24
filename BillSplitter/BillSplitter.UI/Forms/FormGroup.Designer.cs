@@ -36,6 +36,7 @@
       this.addReceiptButton = new System.Windows.Forms.Button();
       this.userLabel = new System.Windows.Forms.Label();
       this.ownerLabel = new System.Windows.Forms.Label();
+      this.leaveButton = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.billsGridView)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.balanceGridView)).BeginInit();
       this.SuspendLayout();
@@ -124,11 +125,22 @@
       this.ownerLabel.TabIndex = 7;
       this.ownerLabel.Text = "owner";
       // 
+      // leaveButton
+      // 
+      this.leaveButton.Location = new System.Drawing.Point(679, 468);
+      this.leaveButton.Name = "leaveButton";
+      this.leaveButton.Size = new System.Drawing.Size(144, 33);
+      this.leaveButton.TabIndex = 8;
+      this.leaveButton.Text = "Leave group";
+      this.leaveButton.UseVisualStyleBackColor = true;
+      this.leaveButton.Click += new System.EventHandler(this.leaveButton_Click);
+      // 
       // FormGroup
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1228, 560);
+      this.Controls.Add(this.leaveButton);
       this.Controls.Add(this.ownerLabel);
       this.Controls.Add(this.userLabel);
       this.Controls.Add(this.addReceiptButton);
@@ -158,5 +170,6 @@
     private Button addReceiptButton;
     private Label userLabel;
     private Label ownerLabel;
+    private Button leaveButton;
   }
 }

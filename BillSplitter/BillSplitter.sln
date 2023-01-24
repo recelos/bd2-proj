@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillSplitter.UI", "BillSplitter\BillSplitter.UI.csproj", "{D8C73540-44A2-4409-9829-5C564F0D4228}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillSplitter.UI", "BillSplitter.UI\BillSplitter.UI.csproj", "{D8C73540-44A2-4409-9829-5C564F0D4228}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F7D300B9-7A93-4DDC-94D9-A9E97B0BCCE4} = {F7D300B9-7A93-4DDC-94D9-A9E97B0BCCE4}
 	EndProjectSection

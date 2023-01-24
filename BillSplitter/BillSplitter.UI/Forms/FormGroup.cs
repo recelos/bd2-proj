@@ -60,4 +60,9 @@ public partial class FormGroup : Form
 
     billsGridView.Columns["ReceiptId"].Visible = false;
   }
+
+  private void leaveButton_Click(object sender, EventArgs e)
+  {
+    //TODO implement logic
+  }
 }
