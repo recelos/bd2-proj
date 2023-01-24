@@ -4,6 +4,7 @@ using System.Data;
 using Dapper;
 using BillSplitter.DataAccess.Models;
 using BillSplitter.DataAccess.Repositories.Interfaces;
+using System.Security.Cryptography;
 
 namespace BillSplitter.DataAccess.Repositories.Implementations;
 public class LoginRepository : ILoginRepository
@@ -27,7 +28,7 @@ public class LoginRepository : ILoginRepository
       return LoginResult.WrongCredentials;
     }
 
-    if (retrievedPassword.Equals(password))
+    if (retrievedPassword.Equals(HashPassword(password)))
     {
       return LoginResult.Ok;
     }
@@ -55,5 +56,14 @@ public class LoginRepository : ILoginRepository
         new { user_name = login },
         commandType: CommandType.StoredProcedure)
       .FirstOrDefault();
+  }
+  
+  public string HashPassword(string password)
+  {
+    using (SHA256 sha256 = SHA256.Create())
+    {
+      byte[] bytes = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+      return BitConverter.ToString(bytes).Replace("-", "").ToLower();
+    }
   }
 }
