@@ -21,6 +21,6 @@ public partial class FormReceiptDetails : Form
     payerLabel.Text = _receipt.Paying;
 
     usersDataGridView.DataSource = _repository.GetUsersInReceipt(receipt);
-    usersDataGridView.Columns["OtherUserId"].Visible = false;
+    usersDataGridView.Columns["UserId"].Visible = false;
   }
 }

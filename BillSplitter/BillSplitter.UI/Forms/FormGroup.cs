@@ -63,6 +63,16 @@ public partial class FormGroup : Form
 
   private void leaveButton_Click(object sender, EventArgs e)
   {
-    //TODO implement logic
+    var dialogResult = MessageBox.Show($"Do you really want to leave this group?",
+      "Leave group", MessageBoxButtons.YesNo);
+
+    if (dialogResult == DialogResult.No)
+    {
+      return;
+    }
+
+    _repository.DeleteUser(_user.UserId, _group.GroupId);
+
+    Close();
   }
 }
