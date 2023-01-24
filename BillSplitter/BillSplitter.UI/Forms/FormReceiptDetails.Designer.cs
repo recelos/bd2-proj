@@ -41,6 +41,7 @@
       this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.usersDataGridView.Location = new System.Drawing.Point(23, 204);
       this.usersDataGridView.Name = "usersDataGridView";
+      this.usersDataGridView.ReadOnly = true;
       this.usersDataGridView.RowHeadersWidth = 51;
       this.usersDataGridView.RowTemplate.Height = 29;
       this.usersDataGridView.Size = new System.Drawing.Size(748, 223);
