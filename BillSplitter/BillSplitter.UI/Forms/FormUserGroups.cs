@@ -38,6 +38,7 @@ public partial class FormUserGroups : Form
       new FormGroup(_user, group, new GroupRepository())
         .ShowDialog();
     }
+    ReloadResources();
   }
 
   private void addNewGroupButton_Click(object sender, EventArgs e)

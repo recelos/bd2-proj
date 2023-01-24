@@ -9,4 +9,6 @@ public interface IGroupRepository
   List<Receipt> GetReceipts(int groupId);
 
   List<User> GetOtherUsers(int userId, int groupId);
+
+  bool DeleteUser(int userId, int groupId);
 }

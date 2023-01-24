@@ -42,6 +42,11 @@ public partial class FormGroupOwner : Form
 
   private void addReceiptButton_Click(object sender, EventArgs e)
   {
+    if (!_otherUsers.Any())
+    {
+      return;
+    }
+
     new FormAddReceipt(_user, _group, _otherUsers, new AddReceiptRepository())
       .ShowDialog();
     ReloadResources();
@@ -70,6 +75,11 @@ public partial class FormGroupOwner : Form
 
   private void deleteReceiptButton_Click(object sender, EventArgs e)
   {
+    if (!_otherUsers.Any())
+    {
+      return;
+    }
+
     var selectedRow = billsGridView.SelectedRows[0];
 
     var dialogResult = MessageBox.Show("Do you really want to delete this receipt?", 
@@ -91,6 +101,11 @@ public partial class FormGroupOwner : Form
 
   private void deleteUserButton_Click(object sender, EventArgs e)
   {
+    if (!_otherUsers.Any())
+    {
+      return;
+    }
+
     var selectedRow = balanceGridView.SelectedRows[0];
 
     var dialogResult = MessageBox.Show($"Do you really want to delete this user: {selectedRow.Cells[1].Value}?",

@@ -29,6 +29,7 @@ public class GroupRepository : IGroupRepository
           commandType: System.Data.CommandType.StoredProcedure)
         .FirstOrDefault();
 
+      balance.OtherUserId = otherUser.UserId;
       balance.Name = otherUser.Username;
       balance.Amount = otherUsersDebt - thisUsersDebt;
 
