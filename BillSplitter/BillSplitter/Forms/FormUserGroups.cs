@@ -27,6 +27,7 @@ public partial class FormUserGroups : Form
     var groupId = (int)groupsDataGrid.Rows[e.RowIndex].Cells[0].Value;
     var group = _groups.FirstOrDefault(x => x.GroupId == groupId);
 
+    // group.OwnerName = _repository.GetGroupOwnerName(groupId);
 
     var isOwner = _repository.CheckIfOwner(_user.UserId, group.GroupId);
 
@@ -53,6 +54,12 @@ public partial class FormUserGroups : Form
   private void ReloadResources()
   {
     _groups = _repository.GetGroups(_user.UserId);
+
+    foreach (var group in _groups)
+    {
+      var groupOwnerName = _repository.GetGroupOwnerName(group.GroupId);
+      group.OwnerName = groupOwnerName;
+    }
 
     groupsDataGrid.DataSource = _groups;
 

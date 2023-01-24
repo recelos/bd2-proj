@@ -16,4 +16,15 @@ public class GroupOwnerRepository : GroupRepository, IGroupOwnerRepository
 
     return rowsAffected > 0;
   }
+
+  public bool DeleteUser(int userId, int groupId)
+  {
+    using var connection = ConnectionFactory.Create();
+
+    var rowsAffected = connection.Execute(StoredProcedures.RemoveUserFromGroup,
+      new { user_id = userId, group_id = groupId },
+      commandType: System.Data.CommandType.StoredProcedure);
+
+    return rowsAffected > 0;
+  }
 }

@@ -3,5 +3,4 @@
 public interface IAddUserToGroupRepository
 {
   bool AddUserToGroup(string username, int groupId);
-
 }

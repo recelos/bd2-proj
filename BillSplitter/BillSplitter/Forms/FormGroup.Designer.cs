@@ -35,6 +35,7 @@
       this.label2 = new System.Windows.Forms.Label();
       this.addReceiptButton = new System.Windows.Forms.Button();
       this.userLabel = new System.Windows.Forms.Label();
+      this.ownerLabel = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.billsGridView)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.balanceGridView)).BeginInit();
       this.SuspendLayout();
@@ -113,11 +114,22 @@
       this.userLabel.TabIndex = 6;
       this.userLabel.Text = "user name";
       // 
+      // ownerLabel
+      // 
+      this.ownerLabel.AutoSize = true;
+      this.ownerLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+      this.ownerLabel.Location = new System.Drawing.Point(476, 64);
+      this.ownerLabel.Name = "ownerLabel";
+      this.ownerLabel.Size = new System.Drawing.Size(71, 28);
+      this.ownerLabel.TabIndex = 7;
+      this.ownerLabel.Text = "owner";
+      // 
       // FormGroup
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1228, 560);
+      this.Controls.Add(this.ownerLabel);
       this.Controls.Add(this.userLabel);
       this.Controls.Add(this.addReceiptButton);
       this.Controls.Add(this.label2);
@@ -145,5 +157,6 @@
     private Label label2;
     private Button addReceiptButton;
     private Label userLabel;
+    private Label ownerLabel;
   }
 }

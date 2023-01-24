@@ -1,6 +1,7 @@
 ﻿using BillSplitter.DataAccess.Models;
 using BillSplitter.DataAccess.Repositories.Interfaces;
 using BillSplitter.DataAccess.Repositories.Implementations;
+using System.Windows.Forms;
 
 namespace BillSplitter.UI.Forms;
 
@@ -67,18 +68,42 @@ public partial class FormGroupOwner : Form
     billsGridView.Columns["ReceiptId"].Visible = false;
   }
 
-  private void deleteButton_Click(object sender, EventArgs e)
+  private void deleteReceiptButton_Click(object sender, EventArgs e)
   {
-    var confirmed = MessageBox.Show("Do you really want to delete this receipt?", "Delete receipt" , MessageBoxButtons.YesNo);
+    var selectedRow = billsGridView.SelectedRows[0];
 
-    if (confirmed == DialogResult.No)
+    var dialogResult = MessageBox.Show("Do you really want to delete this receipt?", 
+      "Delete receipt" , MessageBoxButtons.YesNo);
+
+    if (dialogResult == DialogResult.No)
     {
       return;
     }
 
-    var receiptId = (int)billsGridView.SelectedRows[0].Cells[0].Value;
+    var receiptId = (int)selectedRow.Cells[0].Value;
 
     var success = _repository.DeleteReceipt(receiptId);
+
+    MessageBox.Show(success ? "Receipt delete successfully" : "Can't delete receipt");
+
+    ReloadResources();
+  }
+
+  private void deleteUserButton_Click(object sender, EventArgs e)
+  {
+    var selectedRow = balanceGridView.SelectedRows[0];
+
+    var dialogResult = MessageBox.Show($"Do you really want to delete this user: {selectedRow.Cells[1].Value}?",
+      "Delete user", MessageBoxButtons.YesNo);
+
+    if (dialogResult == DialogResult.No)
+    {
+      return;
+    }
+
+    var userId = (int)selectedRow.Cells[0].Value;
+
+    var success = _repository.DeleteUser(userId, _group.GroupId);
 
     MessageBox.Show(success ? "Receipt delete successfully" : "Can't delete receipt");
 

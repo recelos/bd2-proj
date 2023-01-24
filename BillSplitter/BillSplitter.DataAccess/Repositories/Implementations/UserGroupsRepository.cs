@@ -15,7 +15,7 @@ public class UserGroupsRepository : IUserGroupsRepository
     return connection.Query<Group>(
         StoredProcedures.GetUsersGroups,
         new { user_id = userId },
-        commandType: System.Data.CommandType.StoredProcedure)
+        commandType: CommandType.StoredProcedure)
       .AsList();
   }
 
@@ -25,6 +25,15 @@ public class UserGroupsRepository : IUserGroupsRepository
 
     return connection.QueryFirst<int>(StoredProcedures.CheckIfOwner,
       new { user_id = userId, group_id = groupId },
+      commandType: CommandType.StoredProcedure);
+  }
+  
+  public string GetGroupOwnerName(int groupId)
+  {
+    using var connection = ConnectionFactory.Create();
+    
+    return connection.QueryFirst<string>(StoredProcedures.GetGroupOwnerName,
+      new { group_id = groupId },
       commandType: CommandType.StoredProcedure);
   }
 }

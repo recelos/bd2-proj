@@ -26,6 +26,7 @@ public partial class FormGroup : Form
 
     groupLabel.Text = _group.Name;
     userLabel.Text = $"{_user.FirstName} {_user.LastName}" ;
+    ownerLabel.Text = _group.OwnerName;
 
     ReloadResources();
   }

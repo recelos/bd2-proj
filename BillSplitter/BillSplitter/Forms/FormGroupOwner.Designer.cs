@@ -37,7 +37,8 @@
       this.userLabel = new System.Windows.Forms.Label();
       this.addUserButton = new System.Windows.Forms.Button();
       this.label3 = new System.Windows.Forms.Label();
-      this.deleteButton = new System.Windows.Forms.Button();
+      this.deleteReceiptButton = new System.Windows.Forms.Button();
+      this.deleteUserButton = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.billsGridView)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.balanceGridView)).BeginInit();
       this.SuspendLayout();
@@ -60,10 +61,12 @@
       // 
       this.balanceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.balanceGridView.Location = new System.Drawing.Point(875, 118);
+      this.balanceGridView.MultiSelect = false;
       this.balanceGridView.Name = "balanceGridView";
       this.balanceGridView.ReadOnly = true;
       this.balanceGridView.RowHeadersWidth = 51;
       this.balanceGridView.RowTemplate.Height = 29;
+      this.balanceGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.balanceGridView.Size = new System.Drawing.Size(314, 407);
       this.balanceGridView.TabIndex = 1;
       // 
@@ -118,7 +121,7 @@
       // 
       // addUserButton
       // 
-      this.addUserButton.Location = new System.Drawing.Point(679, 478);
+      this.addUserButton.Location = new System.Drawing.Point(679, 426);
       this.addUserButton.Name = "addUserButton";
       this.addUserButton.Size = new System.Drawing.Size(144, 33);
       this.addUserButton.TabIndex = 7;
@@ -131,28 +134,39 @@
       this.label3.AutoSize = true;
       this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
       this.label3.ForeColor = System.Drawing.Color.Red;
-      this.label3.Location = new System.Drawing.Point(398, 46);
+      this.label3.Location = new System.Drawing.Point(698, 64);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(103, 38);
       this.label3.TabIndex = 8;
       this.label3.Text = "Owner";
       // 
-      // deleteButton
+      // deleteReceiptButton
       // 
-      this.deleteButton.Location = new System.Drawing.Point(679, 201);
-      this.deleteButton.Name = "deleteButton";
-      this.deleteButton.Size = new System.Drawing.Size(144, 33);
-      this.deleteButton.TabIndex = 9;
-      this.deleteButton.Text = "Delete receipt";
-      this.deleteButton.UseVisualStyleBackColor = true;
-      this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+      this.deleteReceiptButton.Location = new System.Drawing.Point(679, 201);
+      this.deleteReceiptButton.Name = "deleteReceiptButton";
+      this.deleteReceiptButton.Size = new System.Drawing.Size(144, 33);
+      this.deleteReceiptButton.TabIndex = 9;
+      this.deleteReceiptButton.Text = "Delete receipt";
+      this.deleteReceiptButton.UseVisualStyleBackColor = true;
+      this.deleteReceiptButton.Click += new System.EventHandler(this.deleteReceiptButton_Click);
+      // 
+      // deleteUserButton
+      // 
+      this.deleteUserButton.Location = new System.Drawing.Point(679, 479);
+      this.deleteUserButton.Name = "deleteUserButton";
+      this.deleteUserButton.Size = new System.Drawing.Size(144, 31);
+      this.deleteUserButton.TabIndex = 10;
+      this.deleteUserButton.Text = "Delete user";
+      this.deleteUserButton.UseVisualStyleBackColor = true;
+      this.deleteUserButton.Click += new System.EventHandler(this.deleteUserButton_Click);
       // 
       // FormGroupOwner
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1228, 560);
-      this.Controls.Add(this.deleteButton);
+      this.Controls.Add(this.deleteUserButton);
+      this.Controls.Add(this.deleteReceiptButton);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.addUserButton);
       this.Controls.Add(this.userLabel);
@@ -184,6 +198,7 @@
     private Label userLabel;
     private Button addUserButton;
     private Label label3;
-    private Button deleteButton;
+    private Button deleteReceiptButton;
+    private Button deleteUserButton;
   }
 }
