@@ -8,7 +8,6 @@ public partial class FormAddNewGroup : Form
   private readonly User _user;
   private readonly IAddNewGroupRepository _repository;
 
-
   public FormAddNewGroup(User user, IAddNewGroupRepository repository)
   {
     _user = user;
@@ -20,6 +19,12 @@ public partial class FormAddNewGroup : Form
   {
     var groupName = nameTextBox.Text;
 
+    if (string.IsNullOrWhiteSpace(groupName))
+    {
+      MessageBox.Show("Group name cannot be blank");
+      return;
+    }
+
     var success = _repository.TryAddGroup(_user.UserId, groupName);
 
     if (success)
@@ -28,7 +33,7 @@ public partial class FormAddNewGroup : Form
     }
     else
     {
-      MessageBox.Show("Blad podczas dodawania grupy");
+      MessageBox.Show("Error while adding a group");
     }
   }
 }
