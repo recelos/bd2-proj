@@ -1,6 +1,6 @@
 using BillSplitter.DataAccess.Repositories.Implementations;
 
-namespace BillSplitter;
+namespace BillSplitter.UI;
 
 internal static class Program
 {

@@ -13,4 +13,6 @@ public interface IGroupOwnerRepository
   bool DeleteReceipt(int receiptId);
 
   bool DeleteUser(int userId, int groupId);
+
+  void DeleteGroup(int groupId);
 }

@@ -17,4 +17,5 @@ internal static class StoredProcedures
   public const string RemoveReceiptFromGroup = "remove_receipt_from_group";
   public const string RemoveUserFromGroup = "remove_user_from_group";
   public const string GetGroupOwnerName = "get_group_owner_name";
+  public const string RemoveGroup = "remove_group";
 }

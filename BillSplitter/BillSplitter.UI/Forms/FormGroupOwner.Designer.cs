@@ -39,6 +39,7 @@
       this.label3 = new System.Windows.Forms.Label();
       this.deleteReceiptButton = new System.Windows.Forms.Button();
       this.deleteUserButton = new System.Windows.Forms.Button();
+      this.deleteGroupButton = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.billsGridView)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.balanceGridView)).BeginInit();
       this.SuspendLayout();
@@ -121,7 +122,7 @@
       // 
       // addUserButton
       // 
-      this.addUserButton.Location = new System.Drawing.Point(679, 426);
+      this.addUserButton.Location = new System.Drawing.Point(679, 346);
       this.addUserButton.Name = "addUserButton";
       this.addUserButton.Size = new System.Drawing.Size(144, 33);
       this.addUserButton.TabIndex = 7;
@@ -152,7 +153,7 @@
       // 
       // deleteUserButton
       // 
-      this.deleteUserButton.Location = new System.Drawing.Point(679, 479);
+      this.deleteUserButton.Location = new System.Drawing.Point(679, 399);
       this.deleteUserButton.Name = "deleteUserButton";
       this.deleteUserButton.Size = new System.Drawing.Size(144, 31);
       this.deleteUserButton.TabIndex = 10;
@@ -160,11 +161,24 @@
       this.deleteUserButton.UseVisualStyleBackColor = true;
       this.deleteUserButton.Click += new System.EventHandler(this.deleteUserButton_Click);
       // 
+      // deleteGroupButton
+      // 
+      this.deleteGroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+      this.deleteGroupButton.FlatAppearance.BorderSize = 0;
+      this.deleteGroupButton.Location = new System.Drawing.Point(679, 479);
+      this.deleteGroupButton.Name = "deleteGroupButton";
+      this.deleteGroupButton.Size = new System.Drawing.Size(144, 32);
+      this.deleteGroupButton.TabIndex = 11;
+      this.deleteGroupButton.Text = "Delete group";
+      this.deleteGroupButton.UseVisualStyleBackColor = false;
+      this.deleteGroupButton.Click += new System.EventHandler(this.deleteGroupButton_Click);
+      // 
       // FormGroupOwner
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1228, 560);
+      this.Controls.Add(this.deleteGroupButton);
       this.Controls.Add(this.deleteUserButton);
       this.Controls.Add(this.deleteReceiptButton);
       this.Controls.Add(this.label3);
@@ -200,5 +214,6 @@
     private Label label3;
     private Button deleteReceiptButton;
     private Button deleteUserButton;
+    private Button deleteGroupButton;
   }
 }

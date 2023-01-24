@@ -62,4 +62,14 @@ public class GroupRepository : IGroupRepository
       .Where(x => x.UserId != userId)
       .AsList();
   }
+  public bool DeleteUser(int userId, int groupId)
+  {
+    using var connection = ConnectionFactory.Create();
+
+    var rowsAffected = connection.Execute(StoredProcedures.RemoveUserFromGroup,
+      new { user_id = userId, group_id = groupId },
+      commandType: System.Data.CommandType.StoredProcedure);
+
+    return rowsAffected > 0;
+  }
 }

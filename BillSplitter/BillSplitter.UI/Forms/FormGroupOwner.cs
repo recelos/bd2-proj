@@ -105,8 +105,24 @@ public partial class FormGroupOwner : Form
 
     var success = _repository.DeleteUser(userId, _group.GroupId);
 
-    MessageBox.Show(success ? "Receipt delete successfully" : "Can't delete receipt");
+    MessageBox.Show(success ? "User deleted successfully" : "Can't delete user");
 
     ReloadResources();
+  }
+
+  private void deleteGroupButton_Click(object sender, EventArgs e)
+  {
+    var dialogResult = MessageBox.Show("Do you really want to delete this group? This is irreversible.",
+      "Delete group", MessageBoxButtons.YesNo);
+
+
+    if (dialogResult.Equals(DialogResult.No))
+    {
+      return;
+    }
+
+    _repository.DeleteGroup(_group.GroupId);
+
+    Close();
   }
 }
