@@ -1,0 +1,12 @@
+@startuml
+class FormReceiptDetails <<partial>> {
+    - components : System.ComponentModel.IContainer = null
+    # <<override>> Dispose(disposing:bool) : void
+    - InitializeComponent() : void
+    - usersDataGridView : DataGridView
+    - payerLabel : Label
+    - nameLabel : Label
+    - amountLabel : Label
+    - dateLabel : Label
+}
+@enduml

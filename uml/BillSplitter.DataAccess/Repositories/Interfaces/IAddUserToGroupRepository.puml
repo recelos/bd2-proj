@@ -1,0 +1,5 @@
+@startuml
+interface IAddUserToGroupRepository {
+    AddUserToGroup(username:string, groupId:int) : bool
+}
+@enduml

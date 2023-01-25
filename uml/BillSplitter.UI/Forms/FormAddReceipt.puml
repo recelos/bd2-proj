@@ -1,0 +1,11 @@
+@startuml
+class FormAddReceipt <<partial>> {
+    - <<readonly>> _user : User
+    - <<readonly>> _group : Group
+    - <<readonly>> _repository : IAddReceiptRepository
+    - _userAmounts : List<UserAmount>
+    + FormAddReceipt(user:User, group:Group, users:IReadOnlyCollection<User>, addReceiptRepository:IAddReceiptRepository)
+    - acceptButton_Click(sender:object, e:EventArgs) : void
+}
+Form <|-- FormAddReceipt
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class LoginRepository {
+    + TryToLogin(login:string, password:string) : LoginResult
+    + GetUserByUserName(login:string) : User?
+    - {static} GetUserPassword(login:string) : string?
+    - HashPassword(password:string) : string
+}
+ILoginRepository <|-- LoginRepository
+@enduml

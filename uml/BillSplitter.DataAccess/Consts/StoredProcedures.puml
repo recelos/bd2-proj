@@ -1,0 +1,20 @@
+@startuml
+class StoredProcedures <<static>> {
+    + <<const>> GetUsersPassword : string = "get_users_password"
+    + <<const>> GetUserByUsername : string = "get_user_by_username"
+    + <<const>> GetUsersGroups : string = "get_user_groups"
+    + <<const>> GetReceiptsInGroup : string = "get_receipts_in_group"
+    + <<const>> GetUsersInGroup : string = "get_users_in_group"
+    + <<const>> GetUserDebt : string = "get_user_debt"
+    + <<const>> GetUsersInReceipt : string = "get_users_in_receipt"
+    + <<const>> AddNewGroup : string = "add_new_group"
+    + <<const>> AddNewReceipt : string = "add_new_receipt"
+    + <<const>> AddUserToReceipt : string = "add_user_to_receipt"
+    + <<const>> AddUserToGroup : string = "add_user_to_group"
+    + <<const>> CheckIfOwner : string = "check_if_owner"
+    + <<const>> RemoveReceiptFromGroup : string = "remove_receipt_from_group"
+    + <<const>> RemoveUserFromGroup : string = "remove_user_from_group"
+    + <<const>> GetGroupOwnerName : string = "get_group_owner_name"
+    + <<const>> RemoveGroup : string = "remove_group"
+}
+@enduml

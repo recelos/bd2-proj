@@ -1,0 +1,7 @@
+@startuml
+class Group {
+    + GroupId : int <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+    + OwnerName : string <<get>> <<set>>
+}
+@enduml

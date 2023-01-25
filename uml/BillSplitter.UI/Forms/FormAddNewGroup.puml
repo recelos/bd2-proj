@@ -1,0 +1,9 @@
+@startuml
+class FormAddNewGroup <<partial>> {
+    - <<readonly>> _user : User
+    - <<readonly>> _repository : IAddNewGroupRepository
+    + FormAddNewGroup(user:User, repository:IAddNewGroupRepository)
+    - acceptButton_Click(sender:object, e:EventArgs) : void
+}
+Form <|-- FormAddNewGroup
+@enduml

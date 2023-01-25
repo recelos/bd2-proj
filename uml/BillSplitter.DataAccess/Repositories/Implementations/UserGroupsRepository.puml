@@ -1,0 +1,8 @@
+@startuml
+class UserGroupsRepository {
+    + GetGroups(userId:int) : List<Group>
+    + CheckIfOwner(userId:int, groupId:int) : int
+    + GetGroupOwnerName(groupId:int) : string
+}
+IUserGroupsRepository <|-- UserGroupsRepository
+@enduml

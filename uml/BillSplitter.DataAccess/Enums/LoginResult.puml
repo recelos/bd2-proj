@@ -1,0 +1,7 @@
+@startuml
+enum LoginResult {
+    Ok,
+    WrongCredentials,
+    ConnectionError,
+}
+@enduml

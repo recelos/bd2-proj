@@ -1,0 +1,5 @@
+@startuml
+class ConnectionFactory <<static>> {
+    + {static} Create() : MySqlConnection
+}
+@enduml

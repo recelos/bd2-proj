@@ -1,0 +1,8 @@
+@startuml
+class FormReceiptDetails <<partial>> {
+    - <<readonly>> _receipt : Receipt
+    - <<readonly>> _repository : IReceiptDetailsRepository
+    + FormReceiptDetails(receipt:Receipt, repository:IReceiptDetailsRepository)
+}
+Form <|-- FormReceiptDetails
+@enduml

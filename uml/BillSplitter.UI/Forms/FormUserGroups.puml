@@ -1,0 +1,12 @@
+@startuml
+class FormUserGroups <<partial>> {
+    - <<readonly>> _repository : IUserGroupsRepository
+    - <<readonly>> _user : User
+    - _groups : List<Group>
+    + FormUserGroups(repository:IUserGroupsRepository, user:User)
+    - groupsDataGrid_CellDoubleClick(sender:object, e:DataGridViewCellEventArgs) : void
+    - addNewGroupButton_Click(sender:object, e:EventArgs) : void
+    - ReloadResources() : void
+}
+Form <|-- FormUserGroups
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class AddNewGroupRepository {
+    + TryAddGroup(userId:int, groupName:string) : bool
+}
+IAddNewGroupRepository <|-- AddNewGroupRepository
+@enduml

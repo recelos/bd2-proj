@@ -1,0 +1,16 @@
+@startuml
+class FormGroup <<partial>> {
+    - components : System.ComponentModel.IContainer = null
+    # <<override>> Dispose(disposing:bool) : void
+    - InitializeComponent() : void
+    - billsGridView : DataGridView
+    - balanceGridView : DataGridView
+    - groupLabel : Label
+    - label1 : Label
+    - label2 : Label
+    - addReceiptButton : Button
+    - userLabel : Label
+    - ownerLabel : Label
+    - leaveButton : Button
+}
+@enduml

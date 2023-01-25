@@ -1,0 +1,11 @@
+@startuml
+class FormAddReceipt <<partial>> {
+    - components : System.ComponentModel.IContainer = null
+    # <<override>> Dispose(disposing:bool) : void
+    - InitializeComponent() : void
+    - label1 : Label
+    - recipeNameTextBox : TextBox
+    - usersDataGridView : DataGridView
+    - acceptButton : Button
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+enum AddGroupResult {
+    Success,
+    ConnectionError,
+    OtherError,
+}
+@enduml

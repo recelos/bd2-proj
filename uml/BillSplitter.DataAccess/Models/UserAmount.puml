@@ -1,0 +1,7 @@
+@startuml
+class UserAmount {
+    + UserId : int <<get>> <<set>>
+    + User : string <<get>> <<set>>
+    + Amount : decimal <<get>> <<set>>
+}
+@enduml

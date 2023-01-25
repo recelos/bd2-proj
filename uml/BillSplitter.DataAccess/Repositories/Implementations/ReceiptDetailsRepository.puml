@@ -1,0 +1,6 @@
+@startuml
+class ReceiptDetailsRepository {
+    + GetUsersInReceipt(receipt:Receipt) : List<UserAmount>
+}
+IReceiptDetailsRepository <|-- ReceiptDetailsRepository
+@enduml

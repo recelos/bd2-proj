@@ -1,0 +1,12 @@
+@startuml
+class FormAddNewGroup <<partial>> {
+    - components : System.ComponentModel.IContainer = null
+    # <<override>> Dispose(disposing:bool) : void
+    - InitializeComponent() : void
+    - label1 : Label
+    - textBox1 : TextBox
+    - label2 : Label
+    - nameTextBox : TextBox
+    - acceptButton : Button
+}
+@enduml

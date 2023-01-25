@@ -1,0 +1,10 @@
+@startuml
+interface IGroupOwnerRepository {
+    GetUserBalances(userId:int, groupId:int, otherUsers:IReadOnlyCollection<User>) : List<Balance>
+    GetReceipts(groupId:int) : List<Receipt>
+    GetOtherUsers(userId:int, groupId:int) : List<User>
+    DeleteReceipt(receiptId:int) : bool
+    DeleteUser(userId:int, groupId:int) : bool
+    DeleteGroup(groupId:int) : void
+}
+@enduml

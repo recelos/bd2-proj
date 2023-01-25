@@ -1,0 +1,18 @@
+@startuml
+class FormGroupOwner <<partial>> {
+    - <<readonly>> _user : User
+    - <<readonly>> _group : Group
+    - _otherUsers : List<User>
+    - _receipts : List<Receipt>
+    - <<readonly>> _repository : IGroupOwnerRepository
+    + FormGroupOwner(user:User, group:Group, repository:IGroupOwnerRepository)
+    - billsGridView_CellContentDoubleClick(sender:object, e:DataGridViewCellEventArgs) : void
+    - addReceiptButton_Click(sender:object, e:EventArgs) : void
+    - addUserButton_Click(sender:object, e:EventArgs) : void
+    - ReloadResources() : void
+    - deleteReceiptButton_Click(sender:object, e:EventArgs) : void
+    - deleteUserButton_Click(sender:object, e:EventArgs) : void
+    - deleteGroupButton_Click(sender:object, e:EventArgs) : void
+}
+Form <|-- FormGroupOwner
+@enduml

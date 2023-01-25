@@ -1,0 +1,5 @@
+@startuml
+interface IReceiptDetailsRepository {
+    + GetUsersInReceipt(receipt:Receipt) : List<UserAmount>
+}
+@enduml

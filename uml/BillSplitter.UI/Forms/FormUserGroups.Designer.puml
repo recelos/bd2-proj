@@ -1,0 +1,10 @@
+@startuml
+class FormUserGroups <<partial>> {
+    - components : System.ComponentModel.IContainer = null
+    # <<override>> Dispose(disposing:bool) : void
+    - InitializeComponent() : void
+    - usernameLabel : Label
+    - groupsDataGrid : DataGridView
+    - addNewGroupButton : Button
+}
+@enduml

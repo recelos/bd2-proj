@@ -1,0 +1,13 @@
+@startuml
+class FormLogin <<partial>> {
+    - components : System.ComponentModel.IContainer = null
+    # <<override>> Dispose(disposing:bool) : void
+    - InitializeComponent() : void
+    - label1 : Label
+    - label2 : Label
+    - loginTextBox : TextBox
+    - passwordTextBox : TextBox
+    - loginButton : Button
+    - newAccLinkLabel : LinkLabel
+}
+@enduml

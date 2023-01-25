@@ -1,0 +1,9 @@
+@startuml
+class FormLogin <<partial>> {
+    - <<readonly>> _repository : ILoginRepository
+    + FormLogin(repository:ILoginRepository)
+    - loginButton_Click(sender:object, e:EventArgs) : void
+    - newAccLinkLabel_LinkClicked(sender:object, e:LinkLabelLinkClickedEventArgs) : void
+}
+Form <|-- FormLogin
+@enduml

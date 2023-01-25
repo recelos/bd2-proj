@@ -1,0 +1,8 @@
+@startuml
+class GroupOwnerRepository {
+    + DeleteReceipt(receiptId:int) : bool
+    + DeleteGroup(groupId:int) : void
+}
+GroupRepository <|-- GroupOwnerRepository
+IGroupOwnerRepository <|-- GroupOwnerRepository
+@enduml

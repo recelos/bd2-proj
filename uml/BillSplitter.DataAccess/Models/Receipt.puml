@@ -1,0 +1,9 @@
+@startuml
+class Receipt {
+    + ReceiptId : int <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+    + Paying : string <<get>> <<set>>
+    + Amount : decimal <<get>> <<set>>
+    + Date : DateTime <<get>> <<set>>
+}
+@enduml

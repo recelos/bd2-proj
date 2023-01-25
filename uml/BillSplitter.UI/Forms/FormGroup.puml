@@ -1,0 +1,15 @@
+@startuml
+class FormGroup <<partial>> {
+    - <<readonly>> _user : User
+    - <<readonly>> _group : Group
+    - _otherUsers : List<User>
+    - _receipts : List<Receipt>
+    - <<readonly>> _repository : IGroupRepository
+    + FormGroup(user:User, group:Group, repository:IGroupRepository)
+    - billsGridView_CellContentDoubleClick(sender:object, e:DataGridViewCellEventArgs) : void
+    - addReceiptButton_Click(sender:object, e:EventArgs) : void
+    - ReloadResources() : void
+    - leaveButton_Click(sender:object, e:EventArgs) : void
+}
+Form <|-- FormGroup
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class AddReceiptRepository {
+    + TryAddReceipt(userId:int, groupId:int, amount:decimal, name:string) : int
+    + AddUserToReceipt(userId:int, receiptId:int, amount:decimal) : bool
+}
+IAddReceiptRepository <|-- AddReceiptRepository
+@enduml
