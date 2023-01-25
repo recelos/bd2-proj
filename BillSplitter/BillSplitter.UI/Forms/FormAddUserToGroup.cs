@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,12 +17,15 @@ public partial class FormAddUserToGroup : Form
 {
   private readonly IAddUserToGroupRepository _repository;
   private readonly Group _group;
+  private readonly List<User> _otherUsers;
 
   public FormAddUserToGroup(Group group, 
-    IAddUserToGroupRepository repository)
+    IAddUserToGroupRepository repository, 
+    List<User> otherUsers)
   {
     _group = group;
     _repository = repository;
+    _otherUsers = otherUsers;
     InitializeComponent();
   }
 
@@ -34,11 +38,18 @@ public partial class FormAddUserToGroup : Form
       return;
     }
 
+
+    if (_otherUsers.Any(x => x.Username.Equals(name)))
+    {
+      MessageBox.Show("User is already in the group");
+      return;
+    }
+
     var success = _repository.AddUserToGroup(name, _group.GroupId);
 
     if (!success)
     {
-      MessageBox.Show("Cannot add user");
+      MessageBox.Show("User does not exist");
       return;
     }
 

@@ -38,9 +38,6 @@ public partial class FormLogin : Form
       case LoginResult.WrongCredentials:
         MessageBox.Show("Wrong credentials");
         break;
-      default:
-        break;
-
     }
   }
 

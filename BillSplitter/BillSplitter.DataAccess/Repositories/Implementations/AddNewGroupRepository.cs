@@ -16,13 +16,11 @@ public class AddNewGroupRepository : IAddNewGroupRepository
       connection.Execute(StoredProcedures.AddNewGroup,
         new { owner_id = userId, group_name = groupName },
         commandType: System.Data.CommandType.StoredProcedure);
-
     }
     catch (Exception)
     {
       return false;
     }
-
     return true;
   }
 }

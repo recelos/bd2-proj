@@ -57,7 +57,7 @@ public partial class FormAddReceipt : Form
       return;
     }
 
-    var amount = temp.Sum(x => x.Item2);
+    var amount = GetWholeAmount(temp);
     var title = recipeNameTextBox.Text;
 
     var receiptId = _repository.TryAddReceipt(_user.UserId, _group.GroupId, amount, title);
@@ -74,5 +74,10 @@ public partial class FormAddReceipt : Form
     }
 
     Close();
+  }
+
+  private static decimal GetWholeAmount(List<(int, decimal)> temp)
+  {
+    return temp.Sum(x => x.Item2);
   }
 }

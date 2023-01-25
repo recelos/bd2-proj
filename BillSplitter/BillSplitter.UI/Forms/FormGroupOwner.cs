@@ -53,7 +53,7 @@ public partial class FormGroupOwner : Form
   }
   private void addUserButton_Click(object sender, EventArgs e)
   {
-    new FormAddUserToGroup(_group, new AddUserToGroupRepository())
+    new FormAddUserToGroup(_group, new AddUserToGroupRepository(), _otherUsers)
       .ShowDialog();
     ReloadResources();
   }
