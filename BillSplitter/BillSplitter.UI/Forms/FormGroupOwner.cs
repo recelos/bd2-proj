@@ -70,7 +70,8 @@ public partial class FormGroupOwner : Form
     billsGridView.DataSource = _receipts;
     balanceGridView.DataSource = _repository.GetUserBalances(_user.UserId, _group.GroupId, _otherUsers);
 
-    billsGridView.Columns["ReceiptId"].Visible = false;
+    billsGridView.Columns["ReceiptId"]!.Visible = false;
+    balanceGridView.Columns["OtherUserId"]!.Visible = false;
   }
 
   private void deleteReceiptButton_Click(object sender, EventArgs e)
