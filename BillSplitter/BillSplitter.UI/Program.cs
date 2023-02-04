@@ -1,11 +1,12 @@
 using BillSplitter.DataAccess.Repositories.Implementations;
+using BillSplitter.UI.Forms;
 
 namespace BillSplitter.UI;
 
 internal static class Program
 {
   [STAThread]
-  static void Main()
+  private static void Main()
   {
     ApplicationConfiguration.Initialize();
     Application.Run(new FormLogin(new LoginRepository()));

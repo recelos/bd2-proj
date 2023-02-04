@@ -1,4 +1,4 @@
-﻿namespace BillSplitter
+﻿namespace BillSplitter.UI.Forms
 {
   partial class FormLogin
   {

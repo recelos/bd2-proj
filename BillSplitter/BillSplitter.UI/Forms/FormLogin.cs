@@ -1,11 +1,9 @@
 using System.Diagnostics;
 using BillSplitter.DataAccess.Enums;
-using BillSplitter.DataAccess.Repositories;
 using BillSplitter.DataAccess.Repositories.Implementations;
 using BillSplitter.DataAccess.Repositories.Interfaces;
-using BillSplitter.UI.Forms;
 
-namespace BillSplitter;
+namespace BillSplitter.UI.Forms;
 
 public partial class FormLogin : Form
 {

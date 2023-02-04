@@ -17,8 +17,8 @@ public partial class FormReceiptDetails : Form
 
     amountLabel.Text = $"Amount: {_receipt.Amount}";
     dateLabel.Text = $"Date: {_receipt.Date}";
-    nameLabel.Text = _receipt.Name;
-    payerLabel.Text = _receipt.Paying;
+    nameLabel.Text = $"Bill: {_receipt.Name}";
+    payerLabel.Text = $"Payed by: {_receipt.Paying}";
 
     usersDataGridView.DataSource = _repository.GetUsersInReceipt(receipt);
     usersDataGridView.Columns["UserId"].Visible = false;
