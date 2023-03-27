@@ -61,7 +61,7 @@ namespace BillSplitter.DataAccess.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server=138.2.129.96;Database=bazy_projekt;Uid=default;Pwd=default;.
+        ///   Looks up a localized string similar to here insert Connection String to MySql.
         /// </summary>
         internal static string ConnectionString {
             get {
